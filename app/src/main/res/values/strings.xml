@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BudgetChecker</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="re_password">Repeat password</string>
+    <string name="register">Register</string>
+    <string name="swipe_left_to_register">Swipe left to register</string>
+    <string name="swipe_right_to_login">Swipe right to login</string>
+</resources>
