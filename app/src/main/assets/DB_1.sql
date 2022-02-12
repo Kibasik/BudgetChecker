@@ -1,0 +1,5 @@
+CREATE TABLE "users" (
+	"user_id"	INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+	"user_login"	TEXT NOT NULL,
+	"user_pass"	TEXT NOT NULL
+);

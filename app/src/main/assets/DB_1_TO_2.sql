@@ -1,0 +1,5 @@
+CREATE TABLE "period" (
+	"period_id"	INTEGER NOT NULL UNIQUE PRIMARY KEY AUTOINCREMENT,
+	"period"	TEXT NOT NULL,
+	"period_name"	TEXT NOT NULL
+);
