@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.budgetchecker.R;
 import com.example.budgetchecker.controllers.appContext.AppContext;
 import com.example.budgetchecker.controllers.security.PasswordGenerator;
+import com.example.budgetchecker.controllers.sharedPreferences.SharedPreferencesHelper;
 import com.example.budgetchecker.models.db.DBHelper;
 import com.example.budgetchecker.models.db.DBUsers;
 
@@ -96,21 +97,17 @@ public class RegisterFragment extends Fragment {
             DBHelper dbHelper = new DBHelper(AppContext.getAppContext());
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-            // Проверка, что пользователь есть в системе
-            if (!DBUsers.isUserExists(db, loginEt.getText().toString(), passEt.getText().toString())) {
+            // Проверка, что пользователя нет в БД
+            if (DBUsers.getUserID(db, loginEt.getText().toString(), passEt.getText().toString()) == -1) {
                 // Проверка, что пароли совпадают
                 if (passEt.getText().toString().equals(rePassEt.getText().toString())) {
-                    String securePass = "";
 
-                    try {
-                        securePass = PasswordGenerator.generateSecurePassword(passEt.getText().toString());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
 
                     // Добавление нового пользователя в БД
-                    DBUsers.addUser(db, loginEt.getText().toString(), securePass);
+                    int userID = DBUsers.addUser(db, loginEt.getText().toString(), passEt.getText().toString());
+                    SharedPreferencesHelper.setInt("userID", userID);
                     Toast.makeText(AppContext.getAppContext(), "User was registered successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AppContext.getAppContext(), String.format("UserID: %s", SharedPreferencesHelper.getInt("userID")), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(AppContext.getAppContext(), "Passwords are not equal", Toast.LENGTH_SHORT).show();
                 }

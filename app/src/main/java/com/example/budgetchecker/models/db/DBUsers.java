@@ -21,11 +21,23 @@ public class DBUsers extends DBHelper {
     }
 
     // Добавление нового пользователя в БД
-    public static void addUser(SQLiteDatabase db, String userLogin, String userPass) {
+    public static Integer addUser(SQLiteDatabase db, String userLogin, String userPass) {
+        String securePass = "";
+
+        try {
+            securePass = PasswordGenerator.generateSecurePassword(userPass);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         ContentValues cv = new ContentValues();
+        cv.put("user_id", 888);
         cv.put(login, userLogin);
-        cv.put(pass, userPass);
+        cv.put(pass, securePass);
         db.insert(tbl, null, cv);
+        int userID = getUserID(db, userLogin, userPass);
+        SharedPreferencesHelper.setInt("userID", userID);
+        return userID;
     }
 
     // Получение всех пользователей из БД
@@ -33,10 +45,10 @@ public class DBUsers extends DBHelper {
         return db.rawQuery("SELECT * FROM " + tbl, null);
     }
 
-    // Проверка, что пользователь уже есть в БД
-    public static boolean isUserExists(SQLiteDatabase db, String userLogin, String userPass) {
+    // Получение ID пользователя из БД
+    public static int getUserID(SQLiteDatabase db, String userLogin, String userPass) {
         String salt = "";
-        boolean res;
+        int res;
 
         try {
             salt = SharedPreferencesHelper.getString("salt");
@@ -45,14 +57,15 @@ public class DBUsers extends DBHelper {
         }
 
         if (!salt.isEmpty()) {
-            String saltedPass = PasswordGenerator.generateSaltedPassword(userPass, salt);
+            String securePass = PasswordGenerator.generateSaltedPassword(userPass, salt);
             String query = String.format("SELECT * FROM %s WHERE UPPER(%s) LIKE UPPER('%%%s%%') AND UPPER(%s) LIKE UPPER('%%%s%%')",
-                    tbl, login, userLogin, pass, saltedPass);
+                    tbl, login, userLogin, pass, securePass);
             Cursor cursor = db.rawQuery(query, null);
-            res = cursor.getCount() > 0;
+            cursor.moveToFirst();
+            res = cursor.getInt(0);
             cursor.close();
         } else {
-            res = false;
+            res = -1;
         }
 
         return res;

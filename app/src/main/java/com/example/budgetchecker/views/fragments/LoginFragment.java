@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.budgetchecker.R;
 import com.example.budgetchecker.controllers.appContext.AppContext;
+import com.example.budgetchecker.controllers.sharedPreferences.SharedPreferencesHelper;
 import com.example.budgetchecker.models.db.DBHelper;
 import com.example.budgetchecker.models.db.DBUsers;
 
@@ -91,9 +92,11 @@ public class LoginFragment extends Fragment {
             DBHelper dbHelper = new DBHelper(AppContext.getAppContext());
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-            // Проверка, что пользователь есть в системе
-            if (DBUsers.isUserExists(db, loginEt.getText().toString(), passEt.getText().toString())) {
+            // Проверка, что пользователь есть в БД
+            if (DBUsers.getUserID(db, loginEt.getText().toString(), passEt.getText().toString()) != -1 &&
+                    DBUsers.getUserID(db, loginEt.getText().toString(), passEt.getText().toString()) == SharedPreferencesHelper.getInt("userID")) {
                 Toast.makeText(AppContext.getAppContext(), "User exists", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AppContext.getAppContext(), String.format("UserID: %S", SharedPreferencesHelper.getInt("userID")), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(AppContext.getAppContext(), "Wrong login or password", Toast.LENGTH_SHORT).show();
             }
