@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.budgetchecker">
+    package="com.example.moneysaver">
 
     <application
         android:name=".controllers.appContext.AppContext"
@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BudgetChecker">
         <activity
-            android:name=".views.activities.MainActivity"
+            android:name=".views.activities.BudgetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.LogRegActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

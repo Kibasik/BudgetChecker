@@ -7,18 +7,17 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/log_login_ttl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/login"
         android:textAlignment="center"
-        android:textSize="50sp"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginTop="60dp" />
+        android:textSize="50sp" />
 
     <EditText
-        android:id="@+id/log_login_et"
+        android:id="@+id/log_login_edittext"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/login"
@@ -31,7 +30,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/log_password_et"
+        android:id="@+id/log_password_edittext"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/password"
@@ -49,7 +48,7 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/log_login_btn"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -64,11 +63,11 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_arrow_right"
-            android:layout_above="@id/log_swipe_right"
+            android:layout_above="@id/swipe_left_textview"
             android:layout_centerHorizontal="true"/>
 
         <TextView
-            android:id="@+id/log_swipe_right"
+            android:id="@+id/swipe_left_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/swipe_left_to_register"

@@ -6,16 +6,34 @@
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/arrow_left.xml" value="0.3655" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/arrow_right.xml" value="0.3655" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/custom_button.xml" value="0.3655" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/custom_edittext.xml" value="0.339" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/et_custom.xml" value="0.3655" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/ic_add.xml" value="0.3765" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/ic_arrow_back.xml" value="0.4035" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.2175" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/ic_arrow_left.xml" value="0.2205" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/ic_arrow_right.xml" value="0.2205" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3765" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/round_imageview.xml" value="0.223" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/drawable/test.xml" value="0.2205" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/activity_budget.xml" value="0.32608695652173914" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/activity_login.xml" value="0.4041666666666667" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/activity_main.xml" value="0.37318840579710144" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/budget_list_view_layout.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/budget_recyclerview_adapter_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/budget_recyclerview_adapter_subitem.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/budget_recyclerview_child.xml" value="0.3953804347826087" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/budget_recyclerview_parent.xml" value="0.3953804347826087" />
+        <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/fragment_budget.xml" value="0.3908514492753623" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/fragment_login.xml" value="0.36096014492753625" />
         <entry key="..\:/AndroidProjects/BudgetChecker/app/src/main/res/layout/fragment_register.xml" value="0.39010416666666664" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/layout/activity_budget.xml" value="0.19655521783181357" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/layout/activity_main.xml" value="0.39719202898550726" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/layout/budget_recyclerview_child.xml" value="0.4" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/layout/budget_recyclerview_parent.xml" value="0.4" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/layout/fragment_budget.xml" value="0.39719202898550726" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/MoneySaver/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>
